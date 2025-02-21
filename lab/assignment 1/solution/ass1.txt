@@ -1,0 +1,21 @@
+en
+erase startup-conf
+reload
+conf t
+hostname R1
+no ip domain-lookup
+exit
+show run
+enable secret class
+banner motd  &
+line console 0
+password cisco
+line vty 0 4
+service password-encryption
+int f0/0
+ip add 192.168.1.1 255.255.255.0
+clock rate 64000
+no shut
+hostname R2
+int s0/0/0
+copy run startup
