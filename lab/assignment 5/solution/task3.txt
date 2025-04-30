@@ -1,0 +1,21 @@
+ip route 0.0.0.0 0.0.0.0 Serial0/0/0
+router rip
+version 2
+no auto-summary
+network 192.168.1.0
+network 192.168.2.0
+passive-interface GigabitEthernet0/0
+default-information originate
+router rip
+version 2
+no auto-summary
+network 192.168.2.0
+network 192.168.3.0
+network 192.168.4.0
+passive-interface GigabitEthernet0/0
+router rip
+version 2
+no auto-summary
+network 192.168.4.0
+network 192.168.5.0
+passive-interface GigabitEthernet0/0
